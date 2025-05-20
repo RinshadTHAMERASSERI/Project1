@@ -27,8 +27,10 @@ function Cart() {
   };
 
   return (
+    <div className='cart-parent' >
+       <h2>Your Cart</h2>
     <div className="cart-container">
-      <h2>Your Cart</h2>
+     
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -51,25 +53,29 @@ function Cart() {
         <table className="table">
           <tbody>
             <tr>
-              <td>Total Items</td>
-              <td>{cartItems.length}</td>
+              <th>Total Items</th>
+              <td>${cartItems.length}</td>
             </tr>
-            <tr>
+            {/* <tr>
               <td>Subtotal</td>
               <td>${totalPrice.toFixed(2)}</td>
-            </tr>
+            </tr> */}
             <tr>
-              <td>Delivery Charge</td>
+              <th>Delivery Charge</th>
               <td>$100</td>
             </tr>
+            <hr />
+
             <tr>
-              <td><strong>Total</strong></td>
-              <td><strong>${finalPrice}</strong></td>
+              <th style={{ textAlign: 'center',color:'green' }}>Total: ${finalPrice}</th>
+
+             
             </tr>
           </tbody>
         </table>
         <button className="button" onClick={placeOrder}>PLACE ORDER</button>
       </div>
+    </div>
     </div>
   );
 }
